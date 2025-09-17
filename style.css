@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --wrong-color: #e74c3c;
+    --neutral-color: #f2f2f2;
+    --text-color: #333;
+    --bg-color: #ecf0f1;
+    --header-bg: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header and Navbar */
+header {
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 70px;
+}
+
+.nav-brand h2 { color: var(--primary-color); }
+.nav-brand i { margin-right: 0.5rem; }
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover { color: var(--primary-color); }
+.nav-link.active { color: var(--primary-color); }
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.page { width: 100%; }
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 600px;
+    max-width: 95%;
+    overflow: hidden;
+    padding: 3rem;
+    text-align: center;
+    margin: 0 auto; /* Center the container within the page */
+}
+
+/* Common Styles from previous version */
+h1, h2 { margin-bottom: 1rem; }
+p { margin-bottom: 1.5rem; }
+#name-input { width: 100%; padding: 12px; border: 2px solid var(--neutral-color); border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; font-family: inherit; }
+button { background-color: var(--primary-color); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 1.1rem; font-family: inherit; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+button:hover { background-color: #2980b9; transform: translateY(-2px); }
+
+/* Quiz Styles (mostly unchanged) */
+.quiz-header { width: 100%; }
+.header-info { display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 600; }
+.timer { width: 100%; height: 10px; background-color: var(--neutral-color); border-radius: 5px; overflow: hidden; margin-bottom: 1.5rem; }
+.timer-line { height: 100%; background-color: var(--secondary-color); width: 100%; transition: width 1s linear; }
+#question { min-height: 80px; }
+#answer-buttons { list-style-type: none; margin-top: 1.5rem; }
+.btn { width: 100%; background-color: var(--neutral-color); color: var(--text-color); text-align: left; margin-bottom: 0.8rem; }
+.btn:hover:not([disabled]) { background-color: #e0e0e0; }
+.btn.correct { background-color: var(--secondary-color); color: white; }
+.btn.wrong { background-color: var(--wrong-color); color: white; }
+.btn:disabled { cursor: not-allowed; }
+.final-score { font-size: 3rem; font-weight: 700; color: var(--primary-color); margin: 2rem 0; }
+
+/* Leaderboard & About Page Styles */
+#leaderboard-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+#leaderboard-table th, #leaderboard-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--neutral-color); }
+#leaderboard-table th { background-color: #f9f9f9; font-weight: 600; }
+#leaderboard-table tbody tr:nth-child(even) { background-color: #f9f9f9; }
+#leaderboard-table td:first-child, #leaderboard-table th:first-child { text-align: center; }
+#about-page ul { text-align: left; list-style-position: inside; margin: 1.5rem 0; }
+#about-page ul li { margin-bottom: 0.5rem; }
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+footer a { color: var(--primary-color); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Utility */
+.hidden { display: none; }
+.loader { border: 8px solid var(--neutral-color); border-top: 8px solid var(--primary-color); border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; margin: 2rem auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Challenge Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2><i class="fas fa-brain"></i> Trivia Pro</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="leaderboard">Leaderboard</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home-page" class="page">
+            <div class="container" id="welcome-container">
+                <h1>Welcome to Trivia Challenge</h1>
+                <p>Please enter your name to begin</p>
+                <input type="text" id="name-input" placeholder="Your Name" autocomplete="name">
+                <button id="start-btn">Let's Go!</button>
+            </div>
+
+            <div class="container quiz-container hidden" id="quiz-container">
+                <div class="quiz-header">
+                    <div class="header-info">
+                        <span id="question-counter">Question 1/15</span>
+                        <span id="score-counter">Score: 0</span>
+                    </div>
+                    <div class="timer"><div class="timer-line" id="timer-line"></div></div>
+                    <h2 id="question">Question text...</h2>
+                    <ul id="answer-buttons"></ul>
+                </div>
+            </div>
+
+            <div class="container results-container hidden" id="results-container">
+                <h1>Quiz Complete!</h1>
+                <h2 id="results-name">Well done, [Name]!</h2>
+                <p>Your final score is:</p>
+                <p class="final-score" id="final-score">0 / 15</p>
+                <button id="play-again-btn">Play Again</button>
+            </div>
+
+            <div class="loader hidden" id="loader"></div>
+        </div>
+
+        <div id="leaderboard-page" class="page hidden">
+            <div class="container">
+                <h1><i class="fas fa-trophy"></i> Leaderboard</h1>
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="about-page" class="page hidden">
+            <div class="container">
+                <h1><i class="fas fa-info-circle"></i> About Trivia Challenge Pro</h1>
+                <p>This is a lightweight, interactive quiz application designed for practice and fun. It features multiple-choice questions fetched live from the Open Trivia Database.</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>15-second timer per question for a fast-paced challenge.</li>
+                    <li>Instant scoring and feedback.</li>
+                    <li>A persistent leaderboard to track top scores.</li>
+                </ul>
+                <p>Built with HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Trivia Challenge Pro | Questions provided by <a href="https://opentdb.com/" target="_blank">Open Trivia DB</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
