@@ -30,7 +30,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let userName = '';
-const QUIZ_LENGTH = 50;
+const QUIZ_LENGTH = 15;
 const TIME_PER_QUESTION = 15;
 let timer;
 
